@@ -58,6 +58,7 @@ namespace desafio.Controllers
         {
             if (ModelState.IsValid)
             {
+                cliente.DataCadastro = DateTime.Now;
                 _context.Add(cliente);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
